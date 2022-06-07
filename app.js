@@ -54,6 +54,24 @@ app.get('/shopping',verifyToken,(req,res)=>{
     console.log('Haiii');
 })
 
+function middle(req,res,next){
+console.log('Middle Man');
+next()
+}
+
+ab=new Promise((resolve,reject)=>{
+    let ab='5'
+    if(ab===5){
+        resolve('hai')
+    }else{
+        reject('reject')
+    }
+})
+ab.then(results=>{console.log(results);}).catch(err=>{console.log(err);})
+
+
+
+
 
 
 
